@@ -17,6 +17,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import StartupScreen from '../Screens/StartupScreen';
 import { useDispatch } from 'react-redux';
 import * as AuthActions from '../Store/Actions/AuthAction';
+import SignUpScreen from '../Screens/User/SignUpScreen';
+import LoginScreen from '../Screens/User/LoginScreen.js';
 
 
 const ProductsNavigator = createStackNavigator({
@@ -152,10 +154,19 @@ const AuthNavigator = createStackNavigator({
     Auth: {
         screen: AuthScreen,
         navigationOptions: {
-            headerStyle: {
-                backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : ''
-            },
-            headerTintColor: Platform.OS === 'android' ? Colors.accentColor : Colors.primaryColor
+            headerShown: false
+        }
+    },
+    SignUp: {
+        screen: SignUpScreen,
+        navigationOptions: {
+            headerShown: false
+        }
+    },
+    Login: {
+        screen: LoginScreen,
+        navigationOptions: {
+            headerShown: false
         }
     }
 });
